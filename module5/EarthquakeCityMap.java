@@ -117,12 +117,12 @@ public class EarthquakeCityMap extends PApplet {
 	
 	
 	public void draw() {
-		background(255, 200, 0);//1
+		background(255, 200, 0);
 		mouseReleased();
-		map.draw();//2
-		addKey();//3
+		map.draw();
+		addKey();
 
-		drawButtons();//+4
+		drawButtons();
 
 	}
 	//helper method for buttons
@@ -193,12 +193,15 @@ public class EarthquakeCityMap extends PApplet {
 
 	private void checkEarthquakesForClick(){
 		if(lastClicked != null) return;
+
 		for(Marker markerQ : quakeMarkers){
 			if(markerQ.isInside(map, mouseX, mouseY) && !markerQ.isHidden()){
 				lastClicked = (CommonMarker) markerQ;
+
 				for(Marker markerHQ : quakeMarkers){
-					if(lastClicked != markerHQ)
+					if(lastClicked != markerHQ) {
 						markerHQ.setHidden(true);
+					}
 				}
 				for(Marker markerC : cityMarkers){
 					if(markerC.getDistanceTo(lastClicked.getLocation()) > ((EarthquakeMarker)lastClicked).threatCircle()){
@@ -209,14 +212,17 @@ public class EarthquakeCityMap extends PApplet {
 			}
 		}
 	}
+
 	private void checkCitiesForClick(){
 		if(lastClicked != null) return;
 		for(Marker markerC : cityMarkers){
 			if(markerC.isInside(map, mouseX, mouseY) && !markerC.isHidden()){
 				lastClicked = (CommonMarker) markerC;
+
 				for(Marker markerHC : cityMarkers){
-					if(lastClicked != markerHC)
+					if(lastClicked != markerHC) {
 						markerHC.setHidden(true);
+					}
 				}
 				for(Marker markerQ : quakeMarkers){
 					if(lastClicked.getDistanceTo(markerQ.getLocation()) > ((EarthquakeMarker)markerQ).threatCircle()){

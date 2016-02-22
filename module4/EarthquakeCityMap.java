@@ -126,7 +126,7 @@ public class EarthquakeCityMap extends PApplet {
 	
 	
 	public void draw() {
-		background(0);
+		background(255, 200, 0);
 		map.draw();
 		addKey();
 		
@@ -206,14 +206,14 @@ public class EarthquakeCityMap extends PApplet {
 	{
 		// TODO: Implement this method
 		for(Marker countryM : countryMarkers){
-			int countQakes = 0;
+			int countQuakes = 0;
 			for(Marker earthquakeM : quakeMarkers ){
 				if(countryM.getProperty("name") == earthquakeM.getProperty("country")){
-					countQakes++;
+					countQuakes++;
 				}
 			}
-			if(countQakes != 0)
-			System.out.println(countryM.getProperty("name") + ": " + countQakes);
+			if(countQuakes != 0)
+			System.out.println(countryM.getProperty("name") + ": " + countQuakes);
 		}
 	}
 	

@@ -280,13 +280,13 @@ public class ParseFeed {
 	// My method to parse a file containing forest area (% of land area) information from
 	// the world bank. The file and its format can be found: http://data.worldbank.org/indicator/AG.LND.FRST.ZS
 	public static HashMap<String, Float> loadForestAreaFromCSV(PApplet p, String fileName) {
-			// HashMap key: country ID and  data: lifeExp at birth
+
 			HashMap<String, Float> forestAreaMap = new HashMap<String, Float>();
 
 			// get lines of csv file
 			String[] rows = p.loadStrings(fileName);
 
-			// Reads country name and population density value from CSV row
+			// Reads country name and forest area value from CSV row
 			for (String row : rows) {
 				// split row by commas not in quotations
 				String[] columns = row.split(",");

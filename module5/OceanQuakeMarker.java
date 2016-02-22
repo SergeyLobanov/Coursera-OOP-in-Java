@@ -35,7 +35,8 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 		}*/
 	}
 
-	/*public float[] drawLine(/*PGraphics pg, List<Marker> markers){
+	/* method to connect two markers
+	public float[] drawLine(/*PGraphics pg, List<Marker> markers){
 		float [] xy = new float[2];
 		for(Marker marker : markers){
 			xy[0] = marker.getLocation().getLat();
@@ -43,7 +44,7 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 		}
 		return xy;
 	}*/
-	
+
 
 	
 

@@ -30,8 +30,8 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 		// and how it is set in the EarthquakeMarker constructor
 		
 		// TODO: Implement this method
-		float radiusOQM = getRadius();//use radius variable instead of getRadius() method in next time
-		pg.rect(x-0.75f*radiusOQM, y-0.75f*radiusOQM, 1.5f*radiusOQM, 1.5f*radiusOQM);
+
+		pg.rect(x-0.75f*radius, y-0.75f*radius, 1.5f*radius, 1.5f*radius);
 		
 	}
 	

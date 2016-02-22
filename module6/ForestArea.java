@@ -40,8 +40,7 @@ public class ForestArea extends PApplet{
 		countries = GeoJSONReader.loadData(this, "countries.geo.json");
 		countryMarkers = MapUtils.createSimpleMarkers(countries);
 		map.addMarkers(countryMarkers);
-		//System.out.println(countryMarkers.get(0).getId());
-		//System.out.println(forestAreaMap); //to see hashmap
+
 		shadeCountries();
 	}
 
@@ -103,12 +102,12 @@ public class ForestArea extends PApplet{
 				// Encode value as brightness (values range: 40-90)
 				int colorLevel = (int) map(areaPercent, 0, 100, 0, 250);
 				if (areaPercent < 35) {
-					marker.setColor(color(colorLevel + 150, 75 + colorLevel * 2, colorLevel * 2));
-					/*if (obj!=null && obj.isSelected()) { //i am trying, but no
+					marker.setColor(color(colorLevel + 150, 75 + colorLevel * 2, colorLevel * 2, 230));
+					/*if (obj!=null && obj.isSelected()) { //to change shade of selected country
 						obj.setColor(color(colorLevel + 150, 75 + colorLevel * 2, colorLevel * 2, 200));
 					}*/
 				} else {
-					marker.setColor(color(200 - colorLevel, 350 - colorLevel, 200 - colorLevel));
+					marker.setColor(color(200 - colorLevel, 350 - colorLevel, 200 - colorLevel, 230));
 					/*if (obj!=null && obj.isSelected()) {
 						obj.setColor(color(200 - colorLevel, 350 - colorLevel, 200 - colorLevel, 200));
 					}*/
